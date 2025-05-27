@@ -1,5 +1,6 @@
 export default {
   base: '/',
+  outDir: '../dist',
   // 站点配置
   title: 'AnySDK',
   description: '简化对接多种服务商的组件库',

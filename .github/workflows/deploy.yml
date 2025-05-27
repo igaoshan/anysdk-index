@@ -28,22 +28,22 @@ jobs:
         run: npx vitepress build docs
 
       - name: Debug - List dist directory
-        run: ls -la docs/.vitepress/dist/
+        run: ls -la docs/dist/
 
       - name: Create .nojekyll
-        run: touch docs/.vitepress/dist/.nojekyll
+        run: touch docs/dist/.nojekyll
 
       - name: Copy CNAME
-        run: cp docs/.vitepress/CNAME docs/.vitepress/dist/CNAME
+        run: cp docs/.vitepress/CNAME docs/dist/CNAME
 
       - name: Debug - List dist directory after copying
-        run: ls -la docs/.vitepress/dist/
+        run: ls -la docs/dist/
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: docs/.vitepress/dist
+          publish_dir: docs/dist
           force_orphan: true
           commit_message: "Deploy to GitHub Pages"
           enable_jekyll: false
