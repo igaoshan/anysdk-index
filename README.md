@@ -24,4 +24,4 @@ cd anysdk-index
 
 ## 许可证
 
-© 2023 AnySDK. All rights reserved.
+© 2025 AnySDK. All rights reserved.
