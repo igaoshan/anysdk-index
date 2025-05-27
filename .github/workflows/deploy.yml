@@ -21,23 +21,41 @@ jobs:
         with:
           node-version: '18'
 
+      - name: Debug - List current directory
+        run: pwd && ls -la
+
       - name: Install dependencies
-        run: npm install
+        run: |
+          npm install
+          npm list vitepress
 
       - name: Build VitePress
-        run: npx vitepress build docs
+        run: |
+          echo "Current directory: $(pwd)"
+          echo "Listing docs directory:"
+          ls -la docs
+          echo "Listing .vitepress directory:"
+          ls -la docs/.vitepress
+          npx vitepress build docs --debug
 
       - name: Debug - List dist directory
-        run: ls -la docs/dist/
+        run: |
+          echo "Listing dist directory:"
+          ls -la docs/dist || echo "dist directory not found"
 
       - name: Create .nojekyll
-        run: touch docs/dist/.nojekyll
+        run: |
+          mkdir -p docs/dist
+          touch docs/dist/.nojekyll
 
       - name: Copy CNAME
-        run: cp docs/.vitepress/CNAME docs/dist/CNAME
+        run: |
+          cp docs/.vitepress/CNAME docs/dist/CNAME || echo "CNAME file not found"
 
       - name: Debug - List dist directory after copying
-        run: ls -la docs/dist/
+        run: |
+          echo "Listing dist directory after copying:"
+          ls -la docs/dist || echo "dist directory not found"
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
