@@ -1,5 +1,5 @@
 export default {
-  base: '/',
+  base: '/anysdk-index/',
   outDir: './dist',
   // 站点配置
   title: 'AnySDK',
@@ -13,7 +13,7 @@ export default {
     
     // 导航栏
     nav: [
-      { text: '指南', link: '/' },
+      { text: '指南', link: '/guide/' },
       { text: '组件', link: '/components/' },
       { text: 'API参考', link: '/api/' },
       { text: 'GitHub', link: 'https://github.com/igaoshan/anysdk-index' }
