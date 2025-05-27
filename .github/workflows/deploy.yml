@@ -38,15 +38,10 @@ jobs:
           ls -la docs/.vitepress
           npx vitepress build docs --debug
 
-      - name: Debug - List dist directory
-        run: |
-          echo "Listing dist directory:"
-          ls -la docs/.vitepress/dist || echo "dist directory not found"
-
       - name: Create .nojekyll
         run: |
-          mkdir -p docs/.vitepress/dist
           touch docs/.vitepress/dist/.nojekyll
+          echo "Created .nojekyll file"
 
       - name: Copy CNAME
         run: |
