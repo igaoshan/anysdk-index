@@ -25,11 +25,15 @@ jobs:
       - name: Build VitePress
         run: npx vitepress build docs
 
+      - name: Create .nojekyll
+        run: touch docs/.vitepress/dist/.nojekyll
+
+      - name: Copy CNAME
+        run: cp docs/.vitepress/CNAME docs/.vitepress/dist/CNAME
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./docs/.vitepress/dist
-
-      - name: Create .nojekyll
-        run: touch docs/.vitepress/dist/.nojekyll
+          force_orphan: true
