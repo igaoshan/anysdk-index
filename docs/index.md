@@ -14,7 +14,7 @@ hero:
       link: /guide/getting-started
     - theme: alt
       text: 在GitHub上查看
-      link: https://gitee.com/tianyuanoss
+      link: https://github.com/igaoshan/anysdk-index
 
 features:
   - icon: 🚀
