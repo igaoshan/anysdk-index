@@ -41,27 +41,27 @@ jobs:
       - name: Debug - List dist directory
         run: |
           echo "Listing dist directory:"
-          ls -la docs/dist || echo "dist directory not found"
+          ls -la docs/.vitepress/dist || echo "dist directory not found"
 
       - name: Create .nojekyll
         run: |
-          mkdir -p docs/dist
-          touch docs/dist/.nojekyll
+          mkdir -p docs/.vitepress/dist
+          touch docs/.vitepress/dist/.nojekyll
 
       - name: Copy CNAME
         run: |
-          cp docs/.vitepress/CNAME docs/dist/CNAME || echo "CNAME file not found"
+          cp docs/.vitepress/CNAME docs/.vitepress/dist/CNAME || echo "CNAME file not found"
 
       - name: Debug - List dist directory after copying
         run: |
           echo "Listing dist directory after copying:"
-          ls -la docs/dist || echo "dist directory not found"
+          ls -la docs/.vitepress/dist || echo "dist directory not found"
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: docs/dist
+          publish_dir: docs/.vitepress/dist
           force_orphan: true
           commit_message: "Deploy to GitHub Pages"
           enable_jekyll: false
