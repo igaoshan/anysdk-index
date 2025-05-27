@@ -11,7 +11,7 @@ export default {
     
     // 导航栏
     nav: [
-      { text: '指南', link: '/guide/' },
+      { text: '指南', link: '/' },
       { text: '组件', link: '/components/' },
       { text: 'API参考', link: '/api/' },
       { text: 'GitHub', link: 'https://github.com/igaoshan/anysdk-index' }
