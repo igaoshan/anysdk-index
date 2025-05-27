@@ -3,13 +3,13 @@ export default {
   // 站点配置
   title: 'AnySDK',
   description: '简化对接多种服务商的组件库',
-  
+
   // 主题配置
   themeConfig: {
     // 网站标题和logo
     logo: '/logo.png',
     siteTitle: 'AnySDK',
-    
+
     // 导航栏
     nav: [
       { text: '指南', link: '/guide/' },
@@ -17,7 +17,7 @@ export default {
       { text: 'API参考', link: '/api/' },
       { text: 'GitHub', link: 'https://github.com/igaoshan/anysdk-index' }
     ],
-    
+
     // 侧边栏
     sidebar: {
       '/guide/': [
@@ -78,16 +78,16 @@ export default {
         }
       ]
     },
-    
+
     // 社交链接
     socialLinks: [
       { icon: 'github', link: 'https://github.com/igaoshan/anysdk-index' }
     ],
-    
+
     // 页脚
     footer: {
       message: 'Released under the MIT License.',
-      copyright: 'Copyright © 2023-present AnySDK'
+      copyright: 'Copyright © 2025-present AnySDK'
     }
   }
 }
